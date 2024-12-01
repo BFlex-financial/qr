@@ -17,7 +17,7 @@ app.post('/generate-qrcode', async (req, res) => {
 
         const qrCodeBuffer = await QRCode.toBuffer(content, {
             errorCorrectionLevel: 'H',
-            version: 10,
+            version: 24,
             type: 'png',
             margin: 1,
             width: 500
