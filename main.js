@@ -40,7 +40,6 @@ app.post('/generate-qrcode', async (req, res) => {
         });
 
         const finalQRCode = await qrCodeImage.getBufferAsync(Jimp.MIME_PNG);
-        require('fs').writeFileSync("./qrcode.png", finalQRCode);
         const base64QRCode = finalQRCode.toString('base64');
 
         res.status(200).json({
