@@ -44,11 +44,11 @@ app.post('/generate-qrcode', async (req, res) => {
         const base64QRCode = finalQRCode.toString('base64');
 
         res.status(200).json({
-            qrcode: `data:image/png;base64,${base64QRCode}`
+            qrcode: `${base64QRCode}`
         });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Erro ao gerar o QRCode.' });
+        res.status(500).json({ error: 'Error when generate the QRCode' });
     }
 });
 
